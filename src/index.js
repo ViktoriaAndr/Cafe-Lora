@@ -21,3 +21,13 @@ const linkList = document.querySelectorAll('a');
 for (let i = 0; i < linkList.length; i++) {
   linkList[i].addEventListener('click', closeNav);
 }
+
+const orderBtn = document.querySelector('.order-btn');
+const drinkSelect = document.querySelector('.drink__cup');
+
+const drink = () => {
+  const selected = drinkSelect.classList.toggle('drink__cup--selected');
+  orderBtn.textContent = selected ? 'Zrušit' : 'Objednat';
+};
+
+orderBtn.addEventListener('click', drink);
