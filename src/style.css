@@ -140,56 +140,6 @@ nav a:hover {
   text-align: center;
 }
 
-.drinks-list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-
-  margin-bottom: 4rem;
-}
-
-.drink {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 0.5rem;
-  width: 100%;
-}
-
-.drink__product {
-  display: flex;
-}
-
-.drink__cup {
-  width: 9rem;
-  height: 9rem;
-}
-
-.drink__cup img {
-  width: 9rem;
-  height: 9rem;
-}
-
-.drink__cup--selected {
-  background-image: url('./img/cup-selected.png');
-  background-size: contain;
-}
-
-.drink__cup--selected img {
-  visibility: hidden;
-}
-
-.drink__info {
-  margin-left: 1rem;
-}
-
-.drink__controls {
-  margin-top: 1rem;
-
-  text-align: center;
-}
-
 .order-btn {
   padding: 0.5rem 1rem;
 
@@ -213,26 +163,6 @@ nav a:hover {
 
 .order-btn:active {
   background-color: #e67e51;
-}
-
-.layer {
-  display: flex;
-  padding: 0.25rem;
-}
-
-.layer__color {
-  flex: 0 0 1rem;
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
-  border-radius: 0.5rem;
-
-  background-color: brown;
-  box-shadow: 0 0 5px #333;
-}
-
-.layer__label {
-  line-height: 1rem;
 }
 
 .gallery {
@@ -323,4 +253,13 @@ nav a:hover {
   .drink {
     width: 33.333%;
   }
+}
+
+.drink__cup--selected {
+  background-image: url('./img/cup-selected.png');
+  background-size: contain;
+}
+
+.drink__cup--selected img {
+  visibility: hidden;
 }
