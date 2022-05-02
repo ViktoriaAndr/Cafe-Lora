@@ -63,49 +63,55 @@ for (let i = 0; i < linkList.length; i++) {
   linkList[i].addEventListener('click', closeNav);
 }
 
-const drinks = [
-  {
-    id: 'cappuccino',
-    name: 'Cappuccino',
-    ordered: false,
-    layers: [
-      {
-        color: '#feeeca',
-        label: 'mléčná pěna',
-      },
-      {
-        color: '#fed7b0',
-        label: 'teplé mléko',
-      },
-      {
-        color: '#613916',
-        label: 'espresso',
-      },
-    ],
-    image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/cappuccino.png',
-  },
-  {
-    id: 'romano',
-    name: 'Romano',
-    ordered: false,
-    layers: [
-      {
-        color: '#fbdf5b',
-        label: 'citrón',
-      },
-      {
-        color: '#613916',
-        label: 'espresso',
-      },
-    ],
-    image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/romano.png',
-  },
-];
+// const drinks = [
+//   {
+//     id: 'cappuccino',
+//     name: 'Cappuccino',
+//     ordered: false,
+//     layers: [
+//       {
+//         color: '#feeeca',
+//         label: 'mléčná pěna',
+//       },
+//       {
+//         color: '#fed7b0',
+//         label: 'teplé mléko',
+//       },
+//       {
+//         color: '#613916',
+//         label: 'espresso',
+//       },
+//     ],
+//     image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/cappuccino.png',
+//   },
+//   {
+//     id: 'romano',
+//     name: 'Romano',
+//     ordered: false,
+//     layers: [
+//       {
+//         color: '#fbdf5b',
+//         label: 'citrón',
+//       },
+//       {
+//         color: '#613916',
+//         label: 'espresso',
+//       },
+//     ],
+//     image: 'https://apps.kodim.cz/daweb/cafelora/assets/cups/romano.png',
+//   },
+// ];
 
-drinks.forEach((item) => {
-  document.querySelector('.drinks-list').appendChild(Drink(item));
-});
+// drinks.forEach((item) => {
+//   document.querySelector('.drinks-list').appendChild(Drink(item));
+// });
 
-//const newdrinkElm = Drink(drinkExample);
-// const drinkslistElm = document.querySelector('.drinks-list');
-// drinkslistElm.appendChild(newdrinkElm)
+fetch('https://apps.kodim.cz/daweb/cafelora/api/drinks')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    data.results.forEach((item) => {
+      document.querySelector('.drinks-list').appendChild(Drink(item));
+    });
+  });
